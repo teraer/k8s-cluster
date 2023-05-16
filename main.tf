@@ -4,7 +4,7 @@ data "azurerm_resource_group" "main" {
 
 module "aks" {
     source  = "tfe.exu.3381802800.workshops.arctiq.ca/arctiq/aks/azure"
-    version = "1.0.1"
+    version = "1.0.2"
 
     # insert required variables here
     cluster_name          = var.cluster_name
