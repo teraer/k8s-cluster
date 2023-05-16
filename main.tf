@@ -3,7 +3,7 @@ data "azurerm_resource_group" "main" {
 }
 
 module "aks" {
-    source  = "tfe.<student-id>.<lab-id>.workshops.arctiq.ca/<TFE-ORG>/aks/azure"
+    source  = "tfe.exu.3381802800.workshops.arctiq.ca/arctiq/aks/azure"
     version = "1.0.1"
 
     # insert required variables here
@@ -12,4 +12,8 @@ module "aks" {
     ARM_CLIENT_ID         = var.ARM_CLIENT_ID
     ARM_CLIENT_SECRET     = var.ARM_CLIENT_SECRET
     prefix                = var.prefix
+}
+
+output "kubernetes_cluster_name" {
+   value = module.aks.kubernetes_cluster_name
 }
